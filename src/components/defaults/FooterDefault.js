@@ -1,19 +1,17 @@
-import { StyleSheet, View, Text, Pressable } from 'react-native';
-import stylesDefault from '../../styles/styleDefault';
+import { StyleSheet, View } from 'react-native';
+import ButtonDefault from './ButtonDefault';
 
-export default function FooterDefault({onChangePage}) {
+export default function FooterDefault({ onChangePage }) {
   return (
     <View style={styles.container}>
-      <Pressable onPress={()=> {onChangePage('options')}}>
-        <Text style={stylesDefault.button}>Optionen</Text>
-      </Pressable>
-      <Pressable onPress={()=> {onChangePage('timer')}}>
-        <Text style={stylesDefault.button}>Timer</Text>
-      </Pressable>
-      {/* <Pressable onPress={()=> {onPageChange('optionen')}}>
+      <ButtonDefault title='Optionen' onPress={() => { onChangePage('options') }}></ButtonDefault>
+      {/* <Pressable onPress={()=> {onChangePage('options')}}>
         <Text style={stylesDefault.button}>Optionen</Text>
       </Pressable> */}
-      
+      <ButtonDefault title='Timer' onPress={() => { onChangePage('timer') }}></ButtonDefault>
+      {/* <Pressable onPress={()=> {onChangePage('timer')}}>
+        <Text style={stylesDefault.button}>Timer</Text>
+      </Pressable>       */}
     </View>
   );
 }

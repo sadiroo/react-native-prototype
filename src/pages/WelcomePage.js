@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import FooterDefault from '../components/defaults/FooterDefault';
 import HeaderDefault from '../components/defaults/HeaderDefault';
-import stylesDefault from '../styles/styleDefault';
+import stylesDefault from '../styles/stylesDefault';
 
 export default function WelcomePage({onChangePage}) {
     const timer = 'timer';

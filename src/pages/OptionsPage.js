@@ -1,38 +1,45 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import FooterDefault from '../components/defaults/FooterDefault';
 import HeaderDefault from '../components/defaults/HeaderDefault';
-import TextInputDefault from '../components/defaults/TextInputDefault';
-import stylesDefault from '../styles/styleDefault';
+import PlayerListOptions from '../components/options/PlayerListOptions';
+import TimeOptions from '../components/options/TimeOptions';
 
-export default function OptionsPage({onChangePage}) {
+export default function OptionsPage({ onChangePage }) {
+    // setPlayerTime(60);
+    return (
+        <View style={styles.page}>
+            <HeaderDefault></HeaderDefault>
+            <ScrollView style={styles.scrollView}>
+                <TimeOptions></TimeOptions>
+                <PlayerListOptions></PlayerListOptions>
+            </ScrollView>
+            {/* <View style={styles.body}>
+                
+            </View> */}
+            <FooterDefault onChangePage={(arg) => { onChangePage(arg) }}></FooterDefault>
 
-  return (
-    <View style={styles.page}>
-        <HeaderDefault></HeaderDefault>
-        <View style={styles.body}>
-            <TextInputDefault prefix="Zeit spieler" suffix="s"/>
-            <TextInputDefault prefix="Zeit vorbereiten" suffix="s"/>
         </View>
-        <FooterDefault onChangePage={(arg) =>{onChangePage(arg)}}></FooterDefault>
-
-    </View>
-  );
+    );
 }
 
 const styles = StyleSheet.create({
-    
+
     page: {
         flex: 1,
         backgroundColor: '#f0f0f0',
         alignItems: 'stretch',
         justifyContent: 'center',
     },
-        body: {
+    body: {
         flex: 6,
         padding: 20,
         alignItems: 'stretch',
         justifyContent: 'flex-start',
     },
-    
+    scrollView: {
+        marginHorizontal: 20,
+        marginTop: 10,
+    }
+
 });

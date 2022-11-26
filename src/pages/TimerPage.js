@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import FooterDefault from '../components/defaults/FooterDefault';
 import HeaderDefault from '../components/defaults/HeaderDefault';
-import stylesDefault from '../styles/styleDefault';
 
 export default function TimerPage({onChangePage}) {
     const [currentState, setState] = useState('timer');
@@ -36,5 +35,5 @@ const styles = StyleSheet.create({
         padding: 20,
         alignItems: 'stretch',
         justifyContent: 'flex-start',
-    },
+    }
 });
