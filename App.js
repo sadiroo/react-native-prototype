@@ -5,6 +5,7 @@ import store from './src/store/store';
 import OptionsPage from './src/pages/OptionsPage';
 import TimerPage from './src/pages/TimerPage';
 import WelcomePage from './src/pages/WelcomePage';
+import AdventurePage from './src/pages/AdventurePage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('welcome');
@@ -18,6 +19,8 @@ export default function App() {
           <TimerPage onChangePage={(arg) => { setCurrentPage(arg) }} />}
         {currentPage === 'options' &&
           <OptionsPage onChangePage={(arg) => { setCurrentPage(arg) }} />}
+        {currentPage === 'adventure' &&
+          <AdventurePage onChangePage={(arg) => { setCurrentPage(arg) }} />}
       </View>
     </Provider>
   );

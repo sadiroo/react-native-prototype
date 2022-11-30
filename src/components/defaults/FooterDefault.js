@@ -1,28 +1,20 @@
 import { StyleSheet, View } from 'react-native';
 import ButtonDefault from './ButtonDefault';
+import stylesDefault from '../../styles/stylesDefault';
 
 export default function FooterDefault({ onChangePage }) {
   return (
     <View style={styles.container}>
-      <ButtonDefault title='Optionen' onPress={() => { onChangePage('options') }}></ButtonDefault>
-      {/* <Pressable onPress={()=> {onChangePage('options')}}>
-        <Text style={stylesDefault.button}>Optionen</Text>
-      </Pressable> */}
-      <ButtonDefault title='Timer' onPress={() => { onChangePage('timer') }}></ButtonDefault>
-      {/* <Pressable onPress={()=> {onChangePage('timer')}}>
-        <Text style={stylesDefault.button}>Timer</Text>
-      </Pressable>       */}
+      <ButtonDefault icon='home' onPress={() => { onChangePage('welcome') }} />
+      <ButtonDefault icon='star' onPress={() => { onChangePage('adventure') }} />
+      <ButtonDefault icon='timer' onPress={() => { onChangePage('timer') }} />
+      <ButtonDefault icon='settings' onPress={() => { onChangePage('options') }} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    height: 80,
-    paddingHorizontal: 20,
-    backgroundColor: '#e6e6e6',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    ...stylesDefault.footer,
   },
 });

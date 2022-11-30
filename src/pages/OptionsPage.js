@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import FooterDefault from '../components/defaults/FooterDefault';
 import HeaderDefault from '../components/defaults/HeaderDefault';
 import PlayerListOptions from '../components/options/PlayerListOptions';
 import TimeOptions from '../components/options/TimeOptions';
+import stylesDefault from '../styles/stylesDefault';
 
 export default function OptionsPage({ onChangePage }) {
-    // setPlayerTime(60);
+
+
     return (
         <View style={styles.page}>
             <HeaderDefault></HeaderDefault>
@@ -26,20 +27,13 @@ export default function OptionsPage({ onChangePage }) {
 const styles = StyleSheet.create({
 
     page: {
-        flex: 1,
-        backgroundColor: '#f0f0f0',
-        alignItems: 'stretch',
-        justifyContent: 'center',
+        ...stylesDefault.page,
     },
     body: {
-        flex: 6,
-        padding: 20,
-        alignItems: 'stretch',
-        justifyContent: 'flex-start',
+        ...stylesDefault.body,
     },
     scrollView: {
-        marginHorizontal: 20,
-        marginTop: 10,
+        ...stylesDefault.scrollView,
     }
 
 });

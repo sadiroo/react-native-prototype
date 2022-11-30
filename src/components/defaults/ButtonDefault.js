@@ -10,7 +10,7 @@ export default function ButtonDefault(probs) {
     //   </Pressable>
     // </View>
     <Button
-      buttonStyle={styles.button}
+      buttonStyle={[styles.button, probs.buttonStyle]}
       containerStyle={styles.container}
       title={probs.title}
       titleStyle={styles.buttonText}

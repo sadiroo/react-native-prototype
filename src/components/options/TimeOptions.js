@@ -1,18 +1,29 @@
-import { useState } from 'react';
 import { StyleSheet, View, Text, } from 'react-native';
 import stylesDefault from '../../styles/stylesDefault';
 import TextInputDefault from '../defaults/TextInputDefault';
+import { useSelector, useDispatch } from 'react-redux';
+import { setPlayerTime, setPrepareTime, selectPlayerTime, selectPrepareTime } from '../../features/timer/timeOptionsSlice';
 
-
-export default function TimeOptions(probs) {
-  const [playerTime, setPlayerTime] = useState('60');
-  const [prepareTime, setPrepareTime] = useState('120');
+export default function TimeOptions() {
+  const playerTime = useSelector(selectPlayerTime);
+  const prepareTime = useSelector(selectPrepareTime);
+  const dispatch = useDispatch();
 
   return (
     <View>
       <Text style={styles.subtitle}>Zeiten</Text>
-      <TextInputDefault prefix="Zeit Spieler" value={playerTime} onValueChange={(arg) => setPlayerTime(arg)} suffix="s" keyboardType="numeric" />
-      <TextInputDefault prefix="Zeit Vorbereiten" value={prepareTime} onValueChange={(arg) => setPrepareTime(arg)} suffix="s" keyboardType="numeric" />
+      <TextInputDefault
+        prefix="Zeit Spielzug"
+        value={playerTime}
+        onValueChange={(arg) => dispatch(setPlayerTime(arg))}
+        suffix="s"
+        keyboardType="numeric" />
+      <TextInputDefault
+        prefix="Zeit Vorbereiten"
+        value={prepareTime}
+        onValueChange={(arg) => dispatch(setPrepareTime(arg))}
+        suffix="s"
+        keyboardType="numeric" />
     </View>
   );
 }
