@@ -32,7 +32,6 @@ export default function TimerPage({ onChangePage }) {
         id = setInterval(() => {
             timeAsync--;
             dispatch(setTime(timeAsync));
-            console.log(timeAsync);
             if (timeAsync <= 0) {
                 clearInterval(id);
                 stopTimer(id);

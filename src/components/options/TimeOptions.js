@@ -15,13 +15,14 @@ export default function TimeOptions() {
       <TextInputDefault
         prefix="Zeit Spielzug"
         value={playerTime}
-        onValueChange={(arg) => dispatch(setPlayerTime(arg))}
+        onChangeText={(text) => dispatch(setPlayerTime(text))}
         suffix="s"
-        keyboardType="numeric" />
+        keyboardType="numeric" 
+        />
       <TextInputDefault
         prefix="Zeit Vorbereiten"
         value={prepareTime}
-        onValueChange={(arg) => dispatch(setPrepareTime(arg))}
+        onChangeText={(text) => dispatch(setPrepareTime(text))}
         suffix="s"
         keyboardType="numeric" />
     </View>

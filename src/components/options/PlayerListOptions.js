@@ -17,16 +17,6 @@ export default function PlayerListOptions(probs) {
     return (
       <View style={styles.inputView}>
         <View style={{ flexDirection: 'row' }}>
-          {/* <TextInput
-            style={styles.input}
-            value={player.name}
-            onChangeText={(text) => {
-              dispatch(editPlayer({
-                id: player.id,
-                name: text,
-              }))
-            }}>
-          </TextInput> */}
           <TextInput
             style={styles.input}
             value={tempName}

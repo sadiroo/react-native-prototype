@@ -6,6 +6,7 @@ import OptionsPage from './src/pages/OptionsPage';
 import TimerPage from './src/pages/TimerPage';
 import WelcomePage from './src/pages/WelcomePage';
 import AdventurePage from './src/pages/AdventurePage';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('welcome');
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={{ flex: 1 }}>
+        <StatusBar  ></StatusBar>
         {currentPage === 'welcome' &&
           <WelcomePage onChangePage={(arg) => { setCurrentPage(arg); }} />}
         {currentPage === 'timer' &&

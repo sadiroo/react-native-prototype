@@ -4,7 +4,7 @@ export const playerListSlice = createSlice({
     name: 'playerList',
     initialState: {
         value: [
-            { id: 0, name: "sadiro" },
+            { id: 0, name: "" },
             { id: 1, name: "" },
             { id: 2, name: "" },
             { id: 3, name: "" },

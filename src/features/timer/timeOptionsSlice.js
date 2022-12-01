@@ -9,7 +9,7 @@ export const timeOptionsSlice = createSlice({
         }
     },
     reducers: {
-        setPlayerTime: (state, action) => {
+        setPlayerTime: (state, action) => {            
             state.value.playerTime = action.payload;
         },
         setPrepareTime: (state, action) => {

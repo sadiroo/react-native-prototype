@@ -9,8 +9,9 @@ export default function TextInputDefault(probs) {
         <TextInput
           style={styles.input}
           value={probs.value}
-          onChangeText={(arg) => { probs.onValueChange(arg) }}
+          onChangeText={(text) => probs.onChangeText(text)}
           keyboardType={probs.keyboardType}
+          selectTextOnFocus
         ></TextInput>
         <Text style={styles.text}>{probs.suffix}</Text>
       </View>
